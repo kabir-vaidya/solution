@@ -1,4 +1,4 @@
-# OSelab-srm
+# solution
 This Repository contains the solution of the Program of OS Lab SRM
 <br>
 I am not respomsible for any loss occured due to this
