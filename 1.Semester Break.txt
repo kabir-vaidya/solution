@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main()
+{
+ int bt[10],ct[10],at[10]={0},turnaroundtime[10],i,j,n,wt[10];
+ float atat=0,awt=0;
+ scanf("%d",&n);
+ for(i=0;i<n;i++)
+ {
+  scanf("%d",&bt[i]);
+ }
+ for(i=0;i<n;i++)
+ {
+  scanf("%d",&at[i]);
+ }
+ ct[0]=bt[0]+at[0];
+ for(i=1;i<n;i++)
+ {
+   ct[i]=ct[i-1]+bt[i];
+ }
+ for(i=0;i<n;i++)
+ {
+ turnaroundtime[i]=ct[i]-at[i];
+ wt[i]=turnaroundtime[i]-bt[i];
+ awt=awt+wt[i];
+ atat=atat+turnaroundtime[i];
+ }
+ for(i=0;i<n;i++)
+{
+ printf("Passenger%d %d %d\n",i,wt[i],turnaroundtime[i]);
+}
+awt=awt/n;
+atat=atat/n;
+printf("Average waiting time=%.6f\nAverage turn around time=%.6f",awt,atat);
+  return 0;
+}
